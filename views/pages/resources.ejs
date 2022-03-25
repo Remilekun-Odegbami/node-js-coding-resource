@@ -1,0 +1,26 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-players">
+    <h2 class="text-center text-primary"><%= name %></h2>
+    <section class="section section-players mt-5">
+        <div class="row">
+            <% data.forEach(item => { %>
+                <div class="col-md-4 m-5">
+                    <a href="/resources/<%= item.id %>">
+                        <p class="figcaption figcap-hits"> Description:
+                            <a href="/resources/<%= item.id %>"> <%= item.description %></a>
+                        </p>
+                        <p class="figcaption figcap-age"> Link to Resource:
+                            <a href= "/resources/<%= item.id %>"> <%= item.url %></a>
+                        </p>
+                        <p class="figcaption figcap-age"> Resource Type:
+                            <a href="/resources/<%= item.id %>"> <%= item.types %></a>
+                        </p>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>

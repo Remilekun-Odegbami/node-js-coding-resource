@@ -1,0 +1,64 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-single container">
+    <h2 class="main-h2 text-center"><%= name %></h2>
+
+
+    <!-- prev and next -->
+
+    <section class="prev-and-next d-flex justify-content-around m-5">
+        <p class="prev">
+            <% if(data.id > 1) { %>
+                <a href="/resources/<%= data.id - 1 %>" class="btn btn-large">Prev</a>
+            <% } %>
+        </p>
+        <p class="next">
+            <% if(data.id <= count) { %>
+                <a href="/resources/<%= data.id + 1 %>" class="btn btn-large" >Next</a>
+            <% } %>
+        </p>
+    </section>
+    <section class="section section-single d-flex justify-content-center mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.jUlQ8mJDvlM93l1G4dYvIwHaEK&pid=Api&P=0&w=500&h=300" alt="Base Ball" class="img-fluid pb-5">
+                    <p> Description: <%= data.description %></p>
+                    <p>  Link to resource: <a href="<%= data.url %>"><%= data.url %></a></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <aside class="aside">
+                        <h3 class="single-h3">More Info</h3>
+                        <ul class="single-ul list-group">
+                                <li class="list-group-item text-danger"> Resource Type:
+                                    <ul class="single-ul list-group">
+                                        <% for(let i = 0; i < data.types.length; i++) { %>
+                                            <li class="single-li list-group-item"><%= data.types[i] %></li>
+                                        <% } %>
+                                    </ul>                                
+                                </li>
+
+                                <li class="list-group-item text-danger"> Topics: 
+                                    <ul class="single-ul list-group">
+                                        <% for(let i = 0; i < data.topics.length; i++) { %>
+                                            <li class="single-li list-group-item"><%= data.topics[i] %></li>
+                                        <% } %>
+                                    </ul>
+                                </li>
+
+                                <li class="list-group-item text-danger"> Levels: 
+                                        <ul class="single-ul list-group">
+                                            <% for(let i = 0; i < data.levels.length; i++) { %>
+                                                <li class="single-li list-group-item"><%= data.levels[i] %></li>
+                                            <% } %>
+                                        </ul>
+                                </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>        
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,104 @@
+:root {
+    --prim: darkgoldenrod;
+    --sec: #109eff;
+    --tert: olive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eaeae3;
+}
+
+a {
+    color: var(--sec);
+    text-decoration: none;
+    transition: color 0.75s ease;
+}
+
+a:hover {
+    color: var(--tert);
+}
+
+/* header */
+.header {
+    padding: 20px 0;
+}
+
+.h1 {
+    color: var(--prim);
+    font-size: calc(38px + (56 - 38) * ((100vw - 300px) / (1600 - 300)));
+    text-transform: uppercase;
+}
+
+.top-nav a {
+    color: var(--sec);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.75s ease;
+}
+
+.top-nav a:hover {
+    color: var(--tert);
+}
+
+/* home */
+.main-h2 {
+    color: var(--sec);
+    text-transform: capitalize;
+}
+
+.home-image {
+    display: block;
+    margin: 50px auto;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #ddd;
+}
+
+
+.aside {
+    width: 40%;
+}
+
+
+.aside ul{
+    width: 100%;
+}
+
+@media (max-width: 360px) {
+    .aside {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: -900px;
+    }
+}
+
+.single-h3 {
+    color: var(--prim);
+    font-size: 18px;
+
+}
+
+.figure-single figcaption {
+    margin: 10px 0;
+    color: var(--prim)
+    
+}
+
+.main-single {
+    height: 67vh;
+}
+
+.btn, .header .nav-link{
+    border: 1px solid red;
+}
+
+.btn:hover {
+    color: olive;
+}
+
